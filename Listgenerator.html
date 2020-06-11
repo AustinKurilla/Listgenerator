@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>List Generator</title>
+		<script src="listgenerator.js"></script>
+		<link rel="stylesheet"
+		type = "text/css"
+		href = "listgenerator.css">
+	</head>
+	<body class="light" onunload="save()">
+	<header>
+			<nav class="navbar">
+				<ul class="navbar-nav">
+						<li class="nav-item has-dropdown">
+						<a href="#">List Options</a>
+						<ul class="dropdown">
+							<li class="dropdown-item">
+								<a id="unordered" href="#">Unordered</a>
+							</li>
+							<li class="dropdown-item">
+								<a id="numbered" href="#">Numbered</a>
+							</li>
+							<li class="dropdown-item">
+								<a id="savebutton" href="#">Save</a>
+							</li>
+							<li class="dropdown-item">
+								<a id="changename" href="#">Filename</a>
+							</li>
+						</ul>
+					</li>					<li class="nav-item"><a href="aboutpage.html">About</a></li>
+					
+					<li class="nav-item has-dropdown">
+						<a href="#">Theme</a>
+						<ul class="dropdown">
+							<li class="dropdown-item">
+								<a id="light" href="#">Light</a>
+							</li>
+							<li class="dropdown-item">
+								<a id="dark" href="#">Dark</a>
+							</li>
+							<li class = "dropdown-item">
+								<a id="solar" href="#">solarize</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<h1 class="shadow">List Generator</h1>
+	</header>
+	<div id="container">
+	<div id="gui">
+		<p id = "heading" class="shadow">Press Enter To Add New Item, Press Delete to remove the last item</p>
+		<input type="text" id="listitem">
+	</div>
+	</div>
+	<div>
+	<p id="list" class="shadow"></p>
+	</div>
+	</body>
+</html>
