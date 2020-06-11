@@ -203,3 +203,9 @@ input[type=text]:focus{
 	--outborder-color: var(--border3);
 	--textcolor: var(--textsolar);
 }
+.deletebutton{
+	color: var(--textcolor);
+	border-radius: 10px;
+	width: 20%;
+	border-color: var(--border-color);
+}
