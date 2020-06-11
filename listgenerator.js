@@ -3,6 +3,7 @@ var xstring = localStorage.getItem('x'); 		//USED as a 'tally' of how many objec
 var numbered = true;
 var filestringtosave = "" 
 var filename = "noname";
+var removebutton = false;
 
 window.onload = function(){
 const darkbutton = document.getElementById("dark");
@@ -17,6 +18,18 @@ const ordered = localStorage.getItem('unordered');
 const savebutton = document.getElementById('savebutton');
 const changebutton = document.getElementById('changename');
 const loadedfilename = localStorage.getItem('filename');
+const loadremovebutton = localStorage.getItem('removebuttonstate');
+const OnMobilebutton = document.getElementById('addbutton');
+
+if(loadremovebutton == null){
+}
+else{
+	removebutton = loadremovebutton;
+}
+if(removebutton){
+	addremovebutton()
+}
+
 if(loadedfilename == null){
 	filestringtosave += filename;
 }
@@ -89,6 +102,18 @@ changebutton.onclick = () =>{
 	localStorage.setItem('filename',filename);
 	location.reload();
 };
+OnMobilebutton.onclick = () =>{
+	if(removebutton){
+		removeRbutton();
+		localStorage.removeItem('removebuttonstate');
+		removebutton = false;
+	}
+	else{
+		addremovebutton();
+		localStorage.setItem('removebuttonstate',true);
+		removebutton = true;
+	}
+};
 
 	//Grab and load list items from local storage
 	var parent = document.getElementById("list");
@@ -109,15 +134,6 @@ changebutton.onclick = () =>{
 		parent.appendChild(list);
 		console.log("SUCCESS!");
 		x++;
-	}
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/i.test(navigator.userAgent)){
-		var parent = document.getElementById('gui');
-		var button = document.createElement("input");
-		button.type = "button";
-		button.value = 'Delete';
-		button.classList.add('deletebutton');
-		button.onclick = remove;
-		parent.appendChild(button);
 	}
 }
 //Add new item to list and local storage
@@ -170,5 +186,20 @@ function download(filename, text) {
         pom.click();
     }
 }
+function addremovebutton(){
+		var parent = document.getElementById('gui');
+		var button = document.createElement("input");
+		button.type = "button";
+		button.value = 'Delete';
+		button.classList.add('deletebutton');
+		button.onclick = remove;
+		parent.appendChild(button);
+}
+function removeRbutton(){
+	var parent = document.getElementById('gui');
+	parent.removeChild(parent.lastChild);
+}
+
+
 
 
