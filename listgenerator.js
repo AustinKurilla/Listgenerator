@@ -110,6 +110,15 @@ changebutton.onclick = () =>{
 		console.log("SUCCESS!");
 		x++;
 	}
+	if(screen.width <= 600){
+		var parent = document.getElementById('gui');
+		var button = document.createElement("input");
+		button.type = "button";
+		button.value = 'Delete';
+		button.classList.add('deletebutton');
+		button.onclick = remove;
+		parent.appendChild(button);
+	}
 }
 //Add new item to list and local storage
 function add(){
