@@ -110,7 +110,7 @@ changebutton.onclick = () =>{
 		console.log("SUCCESS!");
 		x++;
 	}
-	if(screen.width <= 600){
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Mobile/i.test(navigator.userAgent)){
 		var parent = document.getElementById('gui');
 		var button = document.createElement("input");
 		button.type = "button";
