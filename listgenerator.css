@@ -125,7 +125,7 @@ h1{
 #heading {
 	padding-top:1px;
 	color: var(--textcolor);
-	font-size:150%;
+	font-size:100%;
 }
 input[type=text]{
 	width: 50%;
